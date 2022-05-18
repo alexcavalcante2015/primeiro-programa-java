@@ -7,6 +7,10 @@ public class PrimeiraClasseJava {
 	// Main é um método auto executável em Java
 	public static void main(String[] args) {
 		
+		/* 
+		 * new Aluno() é uma instância (Criação de Objeto)
+		 * aluno1 é uma referência para o objeto aluno
+		 */
 		Aluno aluno1 = new Aluno();// Aqui será o João
 		
 		Aluno aluno2 = new Aluno();// Aqui será o Pedro
