@@ -23,10 +23,15 @@ public class PrimeiraClasseJava {
 		aluno1.setDataMatricula("10/01/2019");
 		aluno1.setSerieMatriculado("5");
 		aluno1.setNomeEscola("Escola JDEV Treinamento");
+		aluno1.setNota1(90);
+		aluno1.setNota2(80.8);
+		aluno1.setNota3(70.9);
+		aluno1.setNota4(90.7);
 		
 		System.out.println("Nome é = " + aluno1.getNome());
 		System.out.println("Idade é = " + aluno1.getIdade());
 		System.out.println("Nascimento = " + aluno1.getDataNascimento());
+		System.out.println("Média da nota é = " + aluno1.getMediaNota());
 		
 		//===========================================================================
 		System.out.println("--------------------------------------------------------------");
