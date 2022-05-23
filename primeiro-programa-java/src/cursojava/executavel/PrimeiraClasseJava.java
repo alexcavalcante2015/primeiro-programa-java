@@ -16,7 +16,7 @@ public class PrimeiraClasseJava {
 		 */
 		
 		String nome = JOptionPane.showInputDialog("Qual o nome do aluno?");
-		String idade = JOptionPane.showInputDialog("Qual a idade?");
+		/*String idade = JOptionPane.showInputDialog("Qual a idade?");
 		String dataNascimento = JOptionPane.showInputDialog("Data de nascimento?");
 		String rg = JOptionPane.showInputDialog("Registro Geral?");
 		String cpf = JOptionPane.showInputDialog("Qual é o CPF?");
@@ -24,12 +24,12 @@ public class PrimeiraClasseJava {
 		String pai = JOptionPane.showInputDialog("Nome do pai");
 		String dataMatricula = JOptionPane.showInputDialog("Data da matrícula");
 		String serie = JOptionPane.showInputDialog("Qual a serie");
-		String escola = JOptionPane.showInputDialog("Nome da escola");
+		String escola = JOptionPane.showInputDialog("Nome da escola");*/
 		
 		Aluno aluno1 = new Aluno();
 		
 		aluno1.setNome(nome);
-		aluno1.setIdade(Integer.valueOf(idade));
+		/*aluno1.setIdade(Integer.valueOf(idade));
 		aluno1.setDataNascimento(dataNascimento);
 		aluno1.setRegistroGeral(rg);
 		aluno1.setNumeroCpf(cpf);
@@ -37,7 +37,7 @@ public class PrimeiraClasseJava {
 		aluno1.setNomePai(pai);
 		aluno1.setDataMatricula(dataMatricula);
 		aluno1.setSerieMatriculado(serie);
-		aluno1.setNomeEscola(escola);
+		aluno1.setNomeEscola(escola);*/
 		
 		for (int pos = 1; pos <= 4; pos++) {
 			
