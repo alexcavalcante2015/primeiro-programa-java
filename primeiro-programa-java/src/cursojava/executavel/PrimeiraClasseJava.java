@@ -85,13 +85,17 @@ public class PrimeiraClasseJava {
 		
 		for (Aluno aluno : alunos) {
 			
-			System.out.println(aluno);// é o mesmo que Sysout(aluno1.toString())
-			System.out.println("Média do aluno = " + aluno.getMediaNota());
-			System.out.println("Resultado = " + aluno.getAlunoAprovado2());
-			System.out.println("----------------------------------------------------------");
+			if (aluno.getNome().equalsIgnoreCase("alex")) {
+				
+				System.out.println(aluno);// é o mesmo que Sysout(aluno1.toString())
+				System.out.println("Média do aluno = " + aluno.getMediaNota());
+				System.out.println("Resultado = " + aluno.getAlunoAprovado2());
+				System.out.println("----------------------------------------------------------");
+				break;
+				
+			}
+			
 		}
-		
-		
 		
 	} 
 	
