@@ -15,7 +15,7 @@ public class PrimeiraClasseJava {
 		
 		List<Aluno> alunos = new ArrayList<Aluno>();
 		
-		for (int qtd = 1; qtd <= 1; qtd++) {
+		for (int qtd = 1; qtd <= 2; qtd++) {
 		
 		/* 
 		 * new Aluno() é uma instância (Criação de Objeto)
@@ -46,7 +46,7 @@ public class PrimeiraClasseJava {
 		aluno1.setSerieMatriculado(serie);
 		aluno1.setNomeEscola(escola);*/
 		
-		for (int pos = 1; pos <= 4; pos++) {
+		for (int pos = 1; pos <= 1; pos++) { // pedindo apenas uma disciplina pra aula ficar rápida
 			
 			String nomeDisciplina = JOptionPane.showInputDialog("Nome da disciplina "+pos+" ?");
 			String notaDisciplina = JOptionPane.showInputDialog("Nota da disciplina "+pos+" ?");
@@ -86,6 +86,22 @@ public class PrimeiraClasseJava {
 		for (int pos = 0; pos < alunos.size(); pos++) {
 			
 			Aluno aluno = alunos.get(pos);
+			
+			if (aluno.getNome().equalsIgnoreCase("alex")) {
+				
+				Aluno trocar = new Aluno();
+				trocar.setNome("Aluno foi trocado");
+				
+				Disciplina disciplina = new Disciplina();
+				disciplina.setDisciplina("Matemática");
+				disciplina.setNota(96);
+				
+				trocar.getDisciplinas().add(disciplina);
+				
+				alunos.set(pos, trocar);
+				aluno = alunos.get(pos);
+				
+			}
 			
 			System.out.println("Aluno = " + aluno.getNome());
 			System.out.println("Média do aluno = " + aluno.getMediaNota());
