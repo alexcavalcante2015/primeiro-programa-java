@@ -15,6 +15,11 @@ public class PrimeiraClasseJava {
 	// Main é um método auto executável em Java
 	public static void main(String[] args) {
 		
+		String login = JOptionPane.showInputDialog("Informe o login");
+		String senha = JOptionPane.showInputDialog("Informe a senha");
+		
+		if (login.equalsIgnoreCase("admin") && senha.equalsIgnoreCase("admin")) {
+		
 		List<Aluno> alunos = new ArrayList<Aluno>();
 		
 		// Hashmap  é uma lista que dentro dela temos uma chave que identifica uma sequência de valores também
@@ -117,6 +122,8 @@ public class PrimeiraClasseJava {
 		System.out.println("---------------- Lista dos Recuperação ---------------");
 		for (Aluno aluno : maps.get(StatusAluno.RECUPERACAO)) {
 			System.out.println("Resultado = " + aluno.getAlunoAprovado2() + " com média = " + aluno.getMediaNota());
+		}
+		
 		}
 		
 	} 
