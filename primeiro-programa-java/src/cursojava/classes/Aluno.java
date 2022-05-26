@@ -183,6 +183,13 @@ public class Aluno extends Pessoa {
 		return Objects.equals(nome, other.nome) && Objects.equals(numeroCpf, other.numeroCpf);
 	}
 
+	@Override 
+	public boolean pessoaMaiorIdade() {
+		return idade >= 21;
+	}
 	
+	public String msgMaiorIdade() {
+		return (this.pessoaMaiorIdade() ? "Obaa aluno é maior de idade" : "Ixii vc é menor de idade");
+	}
 	
 }
