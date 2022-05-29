@@ -10,6 +10,7 @@ import cursojava.classes.Aluno;
 import cursojava.classes.Disciplina;
 import cursojava.classes.Secretario;
 import cursojava.constantes.StatusAluno;
+import cursojava.interfaces.PermitirAcesso;
 
 public class PrimeiraClasseJava {
 	
@@ -19,12 +20,7 @@ public class PrimeiraClasseJava {
 		String login = JOptionPane.showInputDialog("Informe o login");
 		String senha = JOptionPane.showInputDialog("Informe a senha");
 		
-		Secretario secretario = new Secretario(); // estamos trabalhando diretamente com o objeto
-		
-		secretario.setLogin(login);
-		secretario.setSenha(senha);
-		
-		if (secretario.autenticar()) { // se TRUE acessa se FALSE não acessa
+		if (new Secretario().autenticar(login, senha)) { // usando new Secretario() diminui mais ainda o código
 		
 		List<Aluno> alunos = new ArrayList<Aluno>();
 		
