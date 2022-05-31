@@ -19,17 +19,19 @@ public class PrimeiraClasseJava {
 	// Main é um método auto executável em Java
 	public static void main(String[] args) {
 		
+		try {
+		
 		String login = JOptionPane.showInputDialog("Informe o login");
 		String senha = JOptionPane.showInputDialog("Informe a senha");
 		// tbm pode ser if (new FuncaoAuntenticacao(new Secretario(login, senha)).autenticar()){...}
 		if (new FuncaoAuntenticacao(new Diretor(login, senha)).autenticar()) { // vou travar o contrato para autorizar somente quem realmente tem o contrato 100% legítimo
 		
-		List<Aluno> alunos = new ArrayList<Aluno>();
+		List<Aluno> alunos = null;
 		
 		// Hashmap  é uma lista que dentro dela temos uma chave que identifica uma sequência de valores também
 		HashMap<String, List<Aluno>> maps = new HashMap<String, List<Aluno>>(); // criar o Hashmap
 		
-		for (int qtd = 1; qtd <= 5; qtd++) {
+		for (int qtd = 1; qtd <= 2; qtd++) {
 			
 		/* 
 		 * new Aluno() é uma instância (Criação de Objeto)
@@ -92,7 +94,7 @@ public class PrimeiraClasseJava {
 			
 	
 		}
-		
+		System.out.println("AQUI o ERRO"); // pra colocar o breakpoint uma linha antes do erro
 		alunos.add(aluno1);
 		
 		}
@@ -130,6 +132,11 @@ public class PrimeiraClasseJava {
 		
 		} else {
 			JOptionPane.showMessageDialog(null, "Acesso não permitido");
+		}
+		
+		} catch (Exception e) {
+			e.printStackTrace(); // imprime erro no console Java
+			JOptionPane.showMessageDialog(null, "Erro ao processar notas" + e.getMessage());
 		}
 		
 	} 
