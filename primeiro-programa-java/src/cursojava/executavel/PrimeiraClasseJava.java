@@ -20,7 +20,9 @@ public class PrimeiraClasseJava {
 		String login = JOptionPane.showInputDialog("Informe o login");
 		String senha = JOptionPane.showInputDialog("Informe a senha");
 		
-		if (new Secretario().autenticar(login, senha)) { // usando new Secretario() diminui mais ainda o código
+		PermitirAcesso permitirAcesso = new Secretario(login, senha);
+		
+		if (permitirAcesso.autenticar()) { 
 		
 		List<Aluno> alunos = new ArrayList<Aluno>();
 		

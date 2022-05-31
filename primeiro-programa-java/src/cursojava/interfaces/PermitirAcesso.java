@@ -5,4 +5,6 @@ public interface PermitirAcesso {
 	
 	public boolean autenticar(String login, String senha); // podemos definir metódos e parâmetros
 	
+	public boolean autenticar();
+	
 }
