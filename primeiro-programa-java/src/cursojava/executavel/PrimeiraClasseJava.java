@@ -1,5 +1,6 @@
 package cursojava.executavel;
 
+import java.io.File;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -20,6 +21,8 @@ public class PrimeiraClasseJava {
 	public static void main(String[] args) {
 		
 		try {
+			
+			new File("Arquivo.txt");
 		
 		String login = JOptionPane.showInputDialog("Informe o login");
 		String senha = JOptionPane.showInputDialog("Informe a senha");
@@ -39,8 +42,9 @@ public class PrimeiraClasseJava {
 		 */
 		
 		String nome = JOptionPane.showInputDialog("Qual o nome do aluno "+qtd+"?");
-		/*String idade = JOptionPane.showInputDialog("Qual a idade?");
-		String dataNascimento = JOptionPane.showInputDialog("Data de nascimento?");
+		String idade = JOptionPane.showInputDialog("Qual a idade?");
+		
+		/*String dataNascimento = JOptionPane.showInputDialog("Data de nascimento?");
 		String rg = JOptionPane.showInputDialog("Registro Geral?");
 		String cpf = JOptionPane.showInputDialog("Qual é o CPF?");
 		String mae = JOptionPane.showInputDialog("Nome da mãe");
@@ -52,8 +56,9 @@ public class PrimeiraClasseJava {
 		Aluno aluno1 = new Aluno();
 		
 		aluno1.setNome(nome);
-		/*aluno1.setIdade(Integer.valueOf(idade));
-		aluno1.setDataNascimento(dataNascimento);
+		aluno1.setIdade(Integer.valueOf(idade));
+		
+		/*aluno1.setDataNascimento(dataNascimento);
 		aluno1.setRegistroGeral(rg);
 		aluno1.setNumeroCpf(cpf);
 		aluno1.setNomeMae(mae);
@@ -94,7 +99,7 @@ public class PrimeiraClasseJava {
 			
 	
 		}
-		System.out.println("AQUI o ERRO"); // pra colocar o breakpoint uma linha antes do erro
+		
 		alunos.add(aluno1);
 		
 		}
@@ -134,7 +139,7 @@ public class PrimeiraClasseJava {
 			JOptionPane.showMessageDialog(null, "Acesso não permitido");
 		}
 		
-		} catch (Exception e) {
+		} catch (NumberFormatException e) { // se for NumberFormatException vai cair aqui
 			
 			StringBuilder saida = new StringBuilder();
 			
@@ -151,8 +156,12 @@ public class PrimeiraClasseJava {
 				
 			}
 			
-			JOptionPane.showMessageDialog(null, "Erro ao processar notas" + saida.toString());
+			JOptionPane.showMessageDialog(null, "Erro de conversão de número " + saida.toString());
 			
+		} catch (NullPointerException e) { // se for NullPointException vai cair aqui
+			JOptionPane.showMessageDialog(null, "Opaa um null pointer exception: " + e.getClass());
+		} catch (Exception e) { // se for qualquer outro tipo de erro vai cair aqui (exceção genérica) 
+			e.printStackTrace();
 		}
 		
 	} 
