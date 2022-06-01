@@ -26,7 +26,7 @@ public class PrimeiraClasseJava {
 		// tbm pode ser if (new FuncaoAuntenticacao(new Secretario(login, senha)).autenticar()){...}
 		if (new FuncaoAuntenticacao(new Diretor(login, senha)).autenticar()) { // vou travar o contrato para autorizar somente quem realmente tem o contrato 100% legítimo
 		
-		List<Aluno> alunos = null;
+		List<Aluno> alunos = new ArrayList<Aluno>();
 		
 		// Hashmap  é uma lista que dentro dela temos uma chave que identifica uma sequência de valores também
 		HashMap<String, List<Aluno>> maps = new HashMap<String, List<Aluno>>(); // criar o Hashmap
@@ -135,8 +135,24 @@ public class PrimeiraClasseJava {
 		}
 		
 		} catch (Exception e) {
+			
+			StringBuilder saida = new StringBuilder();
+			
 			e.printStackTrace(); // imprime erro no console Java
-			JOptionPane.showMessageDialog(null, "Erro ao processar notas" + e.getMessage());
+			
+			System.out.println("Mensagem: " + e.getMessage()); // mensagem do erro ou causa
+			
+			for (int pos = 0; pos < e.getStackTrace().length; pos++) {
+				
+				saida.append("\n Classe de erro: " + e.getStackTrace()[pos].getClassName());
+				saida.append("\n Método de erro: " + e.getStackTrace()[pos].getMethodName());
+				saida.append("\n Linha de erro: " + e.getStackTrace()[pos].getLineNumber());
+				saida.append("\n Class: " + e.getClass().getName());
+				
+			}
+			
+			JOptionPane.showMessageDialog(null, "Erro ao processar notas" + saida.toString());
+			
 		}
 		
 	} 
