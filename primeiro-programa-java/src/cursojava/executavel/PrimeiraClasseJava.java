@@ -23,8 +23,8 @@ public class PrimeiraClasseJava {
 		
 		try {
 			
-		File fil = new File("Arquivo.txt"); 
-		Scanner scanner = new Scanner(fil);
+		//File fil = new File("Arquivo.txt"); 
+		//Scanner scanner = new Scanner(fil);
 		
 		String login = JOptionPane.showInputDialog("Informe o login");
 		String senha = JOptionPane.showInputDialog("Informe a senha");
@@ -165,6 +165,9 @@ public class PrimeiraClasseJava {
 		} catch (Exception e) { // captura todas as exceções que não prevemos
 			e.printStackTrace();
 			JOptionPane.showMessageDialog(null, "Erro inesperado : " + e.getClass().getName());
+		} finally { // Sempre é executado ocorrendo erros ou não.
+			// Finally sempre é usado quando se precisa executar um processo acontecendo erro ou não no sistema
+			JOptionPane.showMessageDialog(null, "Obrigado por aprender Java comigo");
 		}
 		
 	} 
