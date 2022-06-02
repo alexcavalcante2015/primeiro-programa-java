@@ -4,6 +4,7 @@ import java.io.File;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Scanner;
 
 import javax.swing.JOptionPane;
 
@@ -22,7 +23,8 @@ public class PrimeiraClasseJava {
 		
 		try {
 			
-			new File("Arquivo.txt");
+		File fil = new File("Arquivo.txt"); 
+		Scanner scanner = new Scanner(fil);
 		
 		String login = JOptionPane.showInputDialog("Informe o login");
 		String senha = JOptionPane.showInputDialog("Informe a senha");
@@ -160,8 +162,9 @@ public class PrimeiraClasseJava {
 			
 		} catch (NullPointerException e) { // se for NullPointException vai cair aqui
 			JOptionPane.showMessageDialog(null, "Opaa um null pointer exception: " + e.getClass());
-		} catch (Exception e) { // se for qualquer outro tipo de erro vai cair aqui (exceção genérica) 
+		} catch (Exception e) { // captura todas as exceções que não prevemos
 			e.printStackTrace();
+			JOptionPane.showMessageDialog(null, "Erro inesperado : " + e.getClass().getName());
 		}
 		
 	} 
