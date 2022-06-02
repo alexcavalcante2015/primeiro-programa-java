@@ -1,6 +1,7 @@
 package cursojava.executavel;
 
 import java.io.File;
+import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -8,6 +9,7 @@ import java.util.Scanner;
 
 import javax.swing.JOptionPane;
 
+import curso.java.excecao.ExcecaoProcessarNotas;
 import cursojava.classes.Aluno;
 import cursojava.classes.Diretor;
 import cursojava.classes.Disciplina;
@@ -23,8 +25,7 @@ public class PrimeiraClasseJava {
 		
 		try {
 			
-		//File fil = new File("Arquivo.txt"); 
-		//Scanner scanner = new Scanner(fil);
+		lerArquivo();
 		
 		String login = JOptionPane.showInputDialog("Informe o login");
 		String senha = JOptionPane.showInputDialog("Informe a senha");
@@ -162,14 +163,23 @@ public class PrimeiraClasseJava {
 			
 		} catch (NullPointerException e) { // se for NullPointException vai cair aqui
 			JOptionPane.showMessageDialog(null, "Opaa um null pointer exception: " + e.getClass());
-		} catch (Exception e) { // captura todas as exceções que não prevemos
+		} catch (ExcecaoProcessarNotas e) { 
 			e.printStackTrace();
-			JOptionPane.showMessageDialog(null, "Erro inesperado : " + e.getClass().getName());
+			JOptionPane.showMessageDialog(null, "Erro da exceção customizada : " + e.getClass().getName());
 		} finally { // Sempre é executado ocorrendo erros ou não.
 			// Finally sempre é usado quando se precisa executar um processo acontecendo erro ou não no sistema
 			JOptionPane.showMessageDialog(null, "Obrigado por aprender Java comigo");
 		}
 		
 	} 
+	
+	public static void lerArquivo() throws ExcecaoProcessarNotas {
+		try {
+			File fil = new File("Arquivo.txt"); 
+			Scanner scanner = new Scanner(fil);
+		} catch (Exception e) {
+			throw new ExcecaoProcessarNotas(e.getMessage());
+		}
+	}
 	
 }
