@@ -142,7 +142,7 @@ public class PrimeiraClasseJava {
 			JOptionPane.showMessageDialog(null, "Acesso não permitido");
 		}
 		
-		} catch (NumberFormatException e) { // se for NumberFormatException vai cair aqui
+		} catch (Exception e) { // se for NumberFormatException vai cair aqui
 			
 			StringBuilder saida = new StringBuilder();
 			
@@ -161,11 +161,6 @@ public class PrimeiraClasseJava {
 			
 			JOptionPane.showMessageDialog(null, "Erro de conversão de número " + saida.toString());
 			
-		} catch (NullPointerException e) { // se for NullPointException vai cair aqui
-			JOptionPane.showMessageDialog(null, "Opaa um null pointer exception: " + e.getClass());
-		} catch (ExcecaoProcessarNotas e) { 
-			e.printStackTrace();
-			JOptionPane.showMessageDialog(null, "Erro da exceção customizada : " + e.getClass().getName());
 		} finally { // Sempre é executado ocorrendo erros ou não.
 			// Finally sempre é usado quando se precisa executar um processo acontecendo erro ou não no sistema
 			JOptionPane.showMessageDialog(null, "Obrigado por aprender Java comigo");
@@ -173,13 +168,9 @@ public class PrimeiraClasseJava {
 		
 	} 
 	
-	public static void lerArquivo() throws ExcecaoProcessarNotas {
-		try {
+	public static void lerArquivo() throws FileNotFoundException {
 			File fil = new File("Arquivo.txt"); 
 			Scanner scanner = new Scanner(fil);
-		} catch (Exception e) {
-			throw new ExcecaoProcessarNotas(e.getMessage());
-		}
 	}
 	
 }
