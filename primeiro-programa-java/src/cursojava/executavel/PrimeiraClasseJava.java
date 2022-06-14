@@ -142,7 +142,7 @@ public class PrimeiraClasseJava {
 			JOptionPane.showMessageDialog(null, "Acesso não permitido");
 		}
 		
-		} catch (Exception e) { // se for NumberFormatException vai cair aqui
+		} catch (Exception e) {
 			
 			StringBuilder saida = new StringBuilder();
 			
@@ -170,7 +170,7 @@ public class PrimeiraClasseJava {
 	
 	public static void lerArquivo() throws FileNotFoundException {
 			File fil = new File("Arquivo.txt"); 
-			Scanner scanner = new Scanner(fil);
+			//Scanner scanner = new Scanner(fil);
 	}
 	
 }
