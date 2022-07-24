@@ -19,7 +19,6 @@ import javax.swing.JTextField;
 
 public class TelaTimeThread extends JDialog {
 	
-	
 	private JPanel jPanel = new JPanel(new GridBagLayout()); /*Painel de componentes*/
 	
 	private JLabel descricaoHora = new JLabel("Time Thread 1");
