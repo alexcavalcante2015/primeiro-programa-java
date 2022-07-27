@@ -10,7 +10,7 @@ public class DatasEmJava4 {
 
 	public static void main(String[] args) throws ParseException {
 
-		long dias = ChronoUnit.WEEKS.between(LocalDate.parse("2019-01-01"), LocalDate.now());/*Total de dias de uma data até hoje*/
+		long dias = ChronoUnit.DAYS.between(LocalDate.parse("2019-01-01"), LocalDate.now());/*Total de dias de uma data até hoje*/
 		
 		System.out.println("Possui " + dias + " dias entre a faixa de data");
 		
