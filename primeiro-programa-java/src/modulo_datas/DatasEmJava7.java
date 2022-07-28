@@ -1,24 +1,29 @@
 package modulo_datas;
 
-import java.time.LocalDate;
-import java.time.format.DateTimeFormatter;
+import java.time.Duration;
+import java.time.Instant;
 
 public class DatasEmJava7 {
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws InterruptedException {
 
-		LocalDate localDate = LocalDate.now();
-		System.out.println("Data Atual: " + localDate.format(DateTimeFormatter.ofPattern("dd/MM/yyyy")));
+		Instant inicio = Instant.now();
 		
-		System.out.println("Dia da semana: " + localDate.getDayOfWeek().name());
+		Thread.sleep(2000); /*Pode ser um processo com tempo qualquer que não conhecemos*/
 		
-		System.out.println("Dia do mês: " + localDate.getDayOfMonth());
+		Instant iFinal = Instant.now();
 		
-		System.out.println("Dia do ano: " + localDate.getDayOfYear());
+		Duration duracao = Duration.between(inicio, iFinal);
 		
-		System.out.println("Mês: " + localDate.getMonth());
+		System.out.println("Duração em nano segundos: " + duracao.toNanos());
 		
-		System.out.println("Ano: " + localDate.getYear());
+		System.out.println("Duração em minutos: " + duracao.toMinutes());
+		
+		System.out.println("Duração em horas: " + duracao.toHours());
+		
+		System.out.println("Duração em milisegundos: " + duracao.toMillis());
+		
+		System.out.println("Duração em dias: " + duracao.toDays());
 		
 	}
 
