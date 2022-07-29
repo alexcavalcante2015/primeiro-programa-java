@@ -12,7 +12,7 @@ public class LerArquivoTxt {
 	public static void main(String[] args) throws FileNotFoundException {
 
 		FileInputStream entradaArquivo = 
-				new FileInputStream(new File("C:\\Users\\Alex\\git\\repository\\primeiro-programa-java\\src\\arquivos\\arquivo.txt"));
+				new FileInputStream(new File("C:\\Users\\Alex\\git\\repository\\primeiro-programa-java\\src\\arquivos\\arquivo.csv"));
 		
 		Scanner lerArquivo = new Scanner(entradaArquivo, "UTF-8");
 		
@@ -24,7 +24,7 @@ public class LerArquivoTxt {
 			
 			if (linha != null && !linha.isEmpty()) {
 				
-				String[] dados = linha.split("\\|");
+				String[] dados = linha.split("\\;");
 				
 				Pessoa pessoa = new Pessoa();
 				pessoa.setNome(dados[0]);
