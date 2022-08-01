@@ -44,5 +44,12 @@ public class Usuario implements Serializable{
 	public String getCpf() {
 		return cpf;
 	}
+
+	@Override
+	public String toString() {
+		return "Usuario [login=" + login + ", senha=" + senha + ", cpf=" + cpf + ", nome=" + nome + "]";
+	}
+	
+	
 	
 }
